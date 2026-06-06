@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>izLine | Denizcilik Teknolojileri — Ön Çalışma</title>
+  <meta name="description" content="izLine, tekne, yat, marina, filo, servis ve sigorta ekosistemi için akıllı denizcilik teknolojileri geliştiren bir teknoloji girişimidir."/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+</head>
+<body>
+
+<!-- ▸▸ NAVİGASYON ◂◂ -->
+<nav class="topnav">
+  <div class="navinner">
+    <a class="navbrand" href="#">
+      <img
+        src="./img/logo.png"
+        alt="izLine Logo"
+        class="nav-logo"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+      />
+      <!-- Logo yüklenemezse metin logosu göster -->
+      <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:.08em; color:#fff;">
+        iz<span style="color:#94C500;">Line</span>
+        <span style="display:block; font-size:10px; letter-spacing:.22em; color:rgba(255,255,255,.45); font-family:'Josefin Sans',sans-serif; text-transform:uppercase;">Marine</span>
+      </span>
+    </a>
+
+    <nav class="navlinks">
+      <a href="#solution">Çözüm</a>
+      <a href="#roadmap">Yol Haritası</a>
+      <a href="#ecosystem">Ekosistem</a>
+      <a href="#signup">Katıl</a>
+    </nav>
+
+    <a href="#signup" class="navbtn">Formu Doldur →</a>
+  </div>
+</nav>
+
+<!-- ▸▸ HERO ◂◂ -->
+<header class="hero">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="wrap">
+    <div class="herogrid">
+
+      <!-- Sol: Metin -->
+      <div>
+        <div class="pill reveal">
+          <span class="dot"></span>
+          Erken Aşama · Ön Çalışma
+        </div>
+        <h1 class="heading reveal delay-1">
+          Denizciliği <em>gerçek veriyle</em> dönüştürüyoruz.
+        </h1>
+        <p class="herolead reveal delay-2">
+          izLine; tekne, yat, marina, filo, servis ve sigorta ekosistemi için sensör, mobil uygulama ve veri altyapısını tek çatı altında birleştiren bir denizcilik teknolojisi girişimidir. Sizi de bu yolculuğa davet ediyoruz.
+        </p>
+        <div class="heroctarow reveal delay-3">
+          <a href="#signup" class="btn-primary">
+            Ön Çalışmaya Katıl
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#solution" class="btn-ghost">Daha Fazla Bilgi</a>
+        </div>
+      </div>
+
+      <!-- Sağ: Dashboard Mockup -->
+      <div class="device reveal delay-2">
+        <div class="screen">
+          <div class="scr-header">
+            <span class="scr-title">izLine Dashboard</span>
+            <span class="scr-badge">● CANLI</span>
+          </div>
+          <div class="metric-grid">
+            <div class="metric">
+              <label>Akü Voltajı</label>
+              <div class="val">12.8V</div>
+              <div class="bar"><span style="width:82%"></span></div>
+            </div>
+            <div class="metric">
+              <label>Bilge Durumu</label>
+              <div class="val">Normal</div>
+              <div class="bar"><span style="width:5%;background:linear-gradient(90deg,#00e59b,#05c47a)"></span></div>
+            </div>
+            <div class="metric">
+              <label>Motor Saati</label>
+              <div class="val">1,248 h</div>
+              <div class="bar"><span style="width:62%"></span></div>
+            </div>
+            <div class="metric">
+              <label>Sonraki Bakım</label>
+              <div class="val">38 gün</div>
+              <div class="bar"><span style="width:40%;background:linear-gradient(90deg,#ffc107,#ff8c00)"></span></div>
+            </div>
+          </div>
+          <div class="boat-card">
+            <div class="boat-info">
+              <b>Sunseeker 58 — IZM-1142</b>
+              <span>Marina A · Pontun 14 · İzmir</span>
+            </div>
+            <span class="status-ok">NORMAL</span>
+          </div>
+          <div class="boat-card">
+            <div class="boat-info">
+              <b>Bavaria C42 — BOD-0831</b>
+              <span>Marina B · Pontun 7 · Bodrum</span>
+            </div>
+            <span class="status-warn">UYARI</span>
+          </div>
+          <div class="alert-row">
+            <span class="alert-icon">⚡</span>
+            BOD-0831: Akü voltajı düşüyor (11.4V) — Servis önerilir
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ▸▸ VİZYON ◂◂ -->
+<section class="mist" id="solution">
+  <div class="wrap">
+    <div class="vision-box reveal">
+      <h2>izLine nedir ve ne yapmak istiyor?</h2>
+      <p>
+        izLine; tekne sahiplerinden marina yönetimlerine, ticari filolardan servis firmalarına ve sigorta şirketlerine kadar denizcilik ekosisteminin tamamına hizmet etmek üzere tasarlanan bir teknoloji girişimidir. Hedefimiz; güvenlik, bakım, konum takibi, enerji yönetimi ve kritik risk uyarılarını tek bir dijital altyapıda birleştirmek. Gerçek saha ihtiyaçlarını dinleyerek ürün geliştiriyor, sizi de bu sürecin kurucu ortağı olarak görüyoruz.
+      </p>
+      <div class="vision-tags">
+        <span class="vtag">🔋 Sensör Tabanlı İzleme</span>
+        <span class="vtag">📍 Gerçek Zamanlı Konum</span>
+        <span class="vtag">🛡️ Erken Uyarı Sistemi</span>
+        <span class="vtag">🔧 Bakım &amp; Servis Ağı</span>
+        <span class="vtag">📊 Veri &amp; Analitik</span>
+        <span class="vtag">🤝 Sigorta Entegrasyonu</span>
+      </div>
+    </div>
+
+    <div style="height:44px"></div>
+
+    <div class="feat-grid">
+      <div class="feat reveal delay-1">
+        <div class="feat-icon">🔋</div>
+        <h3>Akıllı İzleme</h3>
+        <p>Akü voltajı, bilge, enerji tüketimi, motor saati ve konum gibi kritik verileri anlık olarak takip edin. Anormallik tespit edildiğinde otomatik uyarı alın.</p>
+      </div>
+      <div class="feat reveal delay-2">
+        <div class="feat-icon">🛡️</div>
+        <h3>Güvenlik &amp; Uyarılar</h3>
+        <p>İzinsiz giriş, yer değişikliği, su alma, düşük voltaj ve fırtına uyarıları. Tekneniz güvende olduğunda cebinizden eminsiniz.</p>
+      </div>
+      <div class="feat reveal delay-3">
+        <div class="feat-icon">🔧</div>
+        <h3>Bakım &amp; Servis Yönetimi</h3>
+        <p>Motor saati ve sensör verilerine dayalı bakım hatırlatmaları. Yakın servis firmasını sisteme entegre edin, iş emri oluşturun ve geçmişi arşivleyin.</p>
+      </div>
+      <div class="feat reveal delay-4">
+        <div class="feat-icon">📊</div>
+        <h3>Veri &amp; Raporlama</h3>
+        <p>Tekne sahipleri, marina yöneticileri, filo operatörleri ve sigorta şirketleri için anlam taşıyan özet raporlar ve risk puanlaması.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▸▸ YOL HARİTASI ◂◂ -->
+<section class="light" id="roadmap">
+  <div class="wrap">
+    <div class="center-text reveal">
+      <h2 class="sec-title">Geliştirme <span class="accent">Yol Haritası</span></h2>
+      <p class="sec-sub">Gerçek saha verisi topladıkça ve pilot ortaklar kazandıkça şekillenecek üç aşamalı büyüme planımız.</p>
+    </div>
+    <div class="roadmap reveal">
+      <div class="phase active">
+        <span class="phase-num">// AŞAMA 01</span>
+        <div class="phase-title">Saha Araştırması &amp; MVP</div>
+        <p class="phase-desc">Tekne sahipleri, marinalar, servisler ve sigorta şirketlerinden gerçek ihtiyaç verisi topluyoruz. Bu formla siz de katkı sunabilirsiniz.</p>
+        <span class="phase-tag tag-now">Şu An Buradayız</span>
+      </div>
+      <div class="phase">
+        <span class="phase-num">// AŞAMA 02</span>
+        <div class="phase-title">Pilot Kurulum &amp; Testler</div>
+        <p class="phase-desc">Seçili marinalar ve tekne sahipleriyle donanım kurulumu, mobil uygulama beta testi ve servis ağı entegrasyonu.</p>
+        <span class="phase-tag tag-soon">Yakında</span>
+      </div>
+      <div class="phase">
+        <span class="phase-num">// AŞAMA 03</span>
+        <div class="phase-title">Ekosistem &amp; Ölçekleme</div>
+        <p class="phase-desc">Sigorta şirketleriyle veri ortaklıkları, filo yönetim modülleri, API entegrasyonları ve Avrupa denizcilik pazarına açılım.</p>
+        <span class="phase-tag tag-future">Gelecek Vizyon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▸▸ EKOSİSTEM ◂◂ -->
+<section class="mist" id="ecosystem">
+  <div class="wrap">
+    <div class="center-text reveal">
+      <h2 class="sec-title">Tek bir ürün değil, <span class="accent">denizcilik ekosistemi</span></h2>
+      <p class="sec-sub">Amacımız yalnızca tekne sahiplerine değil; tüm paydaşlara değer üreten bütünleşik bir sistem kurmak.</p>
+    </div>
+    <div class="eco-grid">
+      <div class="eco reveal delay-1">
+        <div class="eco-icon">⛵</div>
+        <b>Tekne &amp; Yat Sahipleri</b>
+        <span>Güvenlik, takip, bakım ve mobil kontrol</span>
+      </div>
+      <div class="eco reveal delay-2">
+        <div class="eco-icon">⚓</div>
+        <b>Marina Yönetimleri</b>
+        <span>Bağlı teknelerin risk ve operasyon görünürlüğü</span>
+      </div>
+      <div class="eco reveal delay-3">
+        <div class="eco-icon">🚢</div>
+        <b>Ticari Filolar</b>
+        <span>Çoklu araç takibi, bakım planlaması, raporlama</span>
+      </div>
+      <div class="eco reveal delay-4">
+        <div class="eco-icon">🔧</div>
+        <b>Servis Firmaları</b>
+        <span>Talep, yönlendirme ve bakım geçmiş yönetimi</span>
+      </div>
+      <div class="eco reveal delay-4">
+        <div class="eco-icon">🛡️</div>
+        <b>Sigorta &amp; Ekspertiz</b>
+        <span>Risk, hasar ve önleyici veri altyapısı</span>
+      </div>
+    </div>
+
+    <div style="height:44px"></div>
+
+    <div class="ctaband reveal">
+      <div>
+        <h2>Denizcilik teknolojilerini gerçek ihtiyaçlara göre inşa ediyoruz.</h2>
+        <p>Bu nedenle tüm paydaşlardan görüş topluyoruz. Katkı sunanlar ürünlerimizin pilot döneminde öncelik ve özel koşullardan yararlanacak.</p>
+      </div>
+      <div style="text-align:center">
+        <a href="#signup" class="btn-primary" style="font-size:15px;padding:16px 30px">
+          Formu Doldur
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <p style="color:rgba(255,255,255,.45);font-size:13px;margin-top:12px;font-family:'Josefin Sans',sans-serif">Tahmini süre: 4–8 dakika</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▸▸ ÖN ÇALIŞMA FORMU ◂◂ -->
+<section class="light" id="signup">
+  <div class="wrap">
+    <div class="form-shell reveal">
+
+      <div class="form-head">
+        <h2>izLine Ön Çalışmasına Katılın</h2>
+        <p>Geliştireceğimiz ürün ve hizmetlerin gerçek ihtiyaçlara göre şekillenmesi için hazırlandı. Katkı sunan kişi ve kurumlara pilot süreçte öncelik ve özel avantajlar sunacağız.</p>
+      </div>
+
+      <form class="form-body" id="surveyForm">
+
+        <!-- İlerleme çubuğu -->
+        <div class="progress-wrap">
+          <div class="prog-bar">
+            <div class="prog-fill" id="progFill"></div>
+          </div>
+          <span class="prog-label" id="progLabel">Adım 1 / 4</span>
+        </div>
+
+        <!-- Bilgi notu -->
+        <div class="notice">
+          <span class="notice-icon">💡</span>
+          <div>
+            <b>Nasıl çalışır?</b> Önce müşteri grubunuzu seçin. Seçiminize göre size özel sorular açılır. Cevaplarınız ürün, sensör paketi, servis modeli ve fiyatlandırma kararlarını şekillendirir.
+          </div>
+        </div>
+
+        <!-- ADIM 1: TEMEL BİLGİLER -->
+        <div class="step-label">
+          <div class="step-badge">1</div>
+          <b>Temel Bilgiler</b>
+        </div>
+        <div class="grid2">
+          <label class="field">
+            <span>Ad Soyad / Kurum Yetkilisi *</span>
+            <input required name="ad_soyad" placeholder="Örn. Mehmet Yılmaz"/>
+          </label>
+          <label class="field">
+            <span>Telefon / E-posta *</span>
+            <input required name="iletisim" placeholder="Telefon veya e-posta"/>
+          </label>
+          <label class="field">
+            <span>Kurum / Marina / Firma Adı</span>
+            <input name="kurum" placeholder="Varsa kurum adınız"/>
+          </label>
+          <label class="field">
+            <span>Şehir / Bölge</span>
+            <input name="sehir" placeholder="Örn. İzmir, Bodrum, Antalya"/>
+          </label>
+        </div>
+
+        <!-- ADIM 2: MÜŞTERİ GRUBU -->
+        <div class="step-label">
+          <div class="step-badge">2</div>
+          <b>Sizi En İyi Tanımlayan Grubu Seçin</b>
+        </div>
+        <div class="seg-grid" id="segGrid">
+          <label class="seg active" onclick="selectSeg(this,'tekne')">
+            <input type="radio" name="segment" value="tekne" checked/>
+            <span class="seg-icon">⛵</span>
+            <b>Tekne / Yat Sahibi</b>
+            <small>Özel veya ticari tekne sahibi</small>
+          </label>
+          <label class="seg" onclick="selectSeg(this,'marina')">
+            <input type="radio" name="segment" value="marina"/>
+            <span class="seg-icon">⚓</span>
+            <b>Marina Yönetimi</b>
+            <small>Marina işletmecisi veya yöneticisi</small>
+          </label>
+          <label class="seg" onclick="selectSeg(this,'filo')">
+            <input type="radio" name="segment" value="filo"/>
+            <span class="seg-icon">🚢</span>
+            <b>Filo İşletmesi</b>
+            <small>Ticari veya kiralık filo operatörü</small>
+          </label>
+          <label class="seg" onclick="selectSeg(this,'servis')">
+            <input type="radio" name="segment" value="servis"/>
+            <span class="seg-icon">🔧</span>
+            <b>Servis Firması</b>
+            <small>Teknik bakım ve onarım hizmetleri</small>
+          </label>
+          <label class="seg" onclick="selectSeg(this,'sigorta')">
+            <input type="radio" name="segment" value="sigorta"/>
+            <span class="seg-icon">🛡️</span>
+            <b>Sigorta / Ekspertiz</b>
+            <small>Deniz sigortası veya hasar ekspertizi</small>
+          </label>
+          <label class="seg" onclick="selectSeg(this,'diger')">
+            <input type="radio" name="segment" value="diger"/>
+            <span class="seg-icon">💼</span>
+            <b>Diğer</b>
+            <small>Kaptan, yatırımcı, tedarikçi...</small>
+          </label>
+        </div>
+
+        <!-- ADIM 3: DİNAMİK SORULAR -->
+        <div class="step-label">
+          <div class="step-badge">3</div>
+          <b id="dynTitle">Size Özel Sorular</b>
+        </div>
+        <div id="dynQuestions"></div>
+
+        <!-- ADIM 4: GENEL DEĞERLENDİRME -->
+        <div class="step-label">
+          <div class="step-badge">4</div>
+          <b>Genel Değerlendirme</b>
+        </div>
+        <div class="qgroup">
+          <h4>Temel ihtiyaç öncelikleri</h4>
+          <p class="qgroup-lead">Aşağıdaki başlıkları sizin için en önemliden en az önemliye değerlendirin.</p>
+          <div id="priMatrix"></div>
+        </div>
+        <div class="qgroup">
+          <h4>İşbirliği ve iletişim tercihleri</h4>
+          <div class="grid2">
+            <label class="field">
+              <span>izLine ile nasıl işbirliği yapmak istersiniz?</span>
+              <select name="isbirligi">
+                <option>Pilot test kullanıcısı olarak</option>
+                <option>Beta test geri bildirimi vererek</option>
+                <option>Saha partneri / demo noktası olarak</option>
+                <option>Yatırım / mentörlük görüşmesi yaparak</option>
+                <option>Sadece ürünü satın alarak</option>
+                <option>Henüz karar vermedim</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Ne kadar hızlı karar verirsiniz?</span>
+              <select name="karar_hizi">
+                <option>Pilot teklif gelirse hemen</option>
+                <option>1–3 ay içinde</option>
+                <option>Ürün hazır olunca</option>
+                <option>Belirsiz</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Tercih ettiğiniz iletişim kanalı</span>
+              <select name="iletisim_kanal">
+                <option>Telefon görüşmesi</option>
+                <option>WhatsApp</option>
+                <option>E-posta</option>
+                <option>Yüz yüze toplantı</option>
+                <option>Video görüşme</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Bu sistemi değerlendirmek için aylık ne kadar bütçe düşünürsünüz?</span>
+              <select name="butce">
+                <option>Henüz bilmiyorum</option>
+                <option>500 TL'ye kadar / ay</option>
+                <option>500–1.500 TL / ay</option>
+                <option>1.500–5.000 TL / ay</option>
+                <option>5.000+ TL / ay</option>
+                <option>Tekne/lokasyon başına değerlendirim</option>
+              </select>
+            </label>
+          </div>
+          <label class="field">
+            <span>Son olarak — izLine'nin çözmesini en çok istediğiniz şey nedir?</span>
+            <textarea name="son_yorum" placeholder="Kısa veya uzun, özgürce yazabilirsiniz. Bu yorum en değerli geri bildirimlerimizden biri olacak."></textarea>
+          </label>
+        </div>
+
+        <!-- CAPTCHA GÜVENLİĞİ -->
+        <div class="qgroup" style="margin-bottom:24px">
+          <div class="h-captcha" data-sitekey="b94ae12c-f75e-40b4-ab70-9bba3730e3e4"></div>
+        </div>
+
+        <!-- Gönder / İndir -->
+        <div class="submit-row">
+          <button type="submit" class="btn-submit">
+            Gönder
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <span style="font-size:13px;color:var(--slate);font-family:'Josefin Sans',sans-serif">
+            Verileriniz yalnızca ürün geliştirme amacıyla kullanılır.
+          </span>
+        </div>
+
+        <!-- Başarı mesajı -->
+        <div class="success" id="successMsg">
+          ✅ Teşekkürler! Yanıtlarınız alındı.
+          <span>Pilot sürecinde ve ürün kararlarında sizinle iletişime geçeceğiz. Katkınız için teşekkür ederiz.</span>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ▸▸ İLETİŞİM BANDI ◂◂ -->
+<section class="light" id="contact">
+  <div class="wrap">
+    <div class="contact-band reveal">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-content">
+        <h3>Fikrinizi paylaşın, birlikte inşa edelim.</h3>
+        <p>Formu doldurduktan sonra aklınıza takılan bir soru mu var? Önerinizi, fikrinizi veya iş birliği teklifinizi doğrudan iletmek ister misiniz? Bize yazın — her mesaj değerli.</p>
+        <button type="button" class="contact-btn" onclick="window.location.href='mailto:info@izline.com'">
+          <span>📧</span>
+          info@izline.com
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▸▸ FOOTER ◂◂ -->
+<footer>
+  <div class="foot">
+    <div>
+      <div class="foot-brand">
+        <img
+          src="./img/logo.png"
+          alt="izLine Logo"
+          class="foot-logo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        />
+        <!-- Logo yüklenemezse metin logosu göster -->
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:.08em; color:#fff;">
+          iz<span style="color:#94C500;">Line</span>
+          <span style="display:block; font-size:10px; letter-spacing:.22em; color:rgba(255,255,255,.45); font-family:'Josefin Sans',sans-serif; text-transform:uppercase;">Marine</span>
+        </span>
+        </div>
+        <p>Denizcilik Teknolojileri · Erken Aşama Girişim · 2024–2025</p>
+        <button type="button" class="foot-email" onclick="window.location.href='mailto:info@izline.com'">
+          info@izline.com
+        </button>
+    </div>
+      <nav class="foot-links">
+      <a href="#solution">Çözüm</a>
+      <a href="#roadmap">Yol Haritası</a>
+      <a href="#ecosystem">Ekosistem</a>
+      <a href="#signup">Ön Çalışma</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
