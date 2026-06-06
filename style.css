@@ -77,6 +77,12 @@ code { font-family: 'JetBrains Mono', monospace; }
 .reveal.in.delay-3 { transition-delay: .3s; }
 .reveal.in.delay-4 { transition-delay: .4s; }
 
+/* Form section override - sabit görünürlük */
+#signup .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* ───────────── LAYOUT ───────────── */
 .wrap {
   max-width: 1200px;
@@ -111,10 +117,10 @@ nav.topnav {
 }
 
 .hero-logo {
-  width: 200px; 
+  width: 250px; 
   height: auto;
   display: none;
-  margin: 30px 0;
+  margin: 40px 0;
   object-fit: contain;
 }
 
@@ -531,6 +537,12 @@ h2.sec-title span.accent { color: var(--brand-green); }
   box-shadow: var(--shadow-lg);
   -webkit-box-shadow: var(--shadow-lg);
   overflow: hidden;
+  opacity: 1 !important;
+  transform: none !important;
+}
+.form-shell .reveal {
+  opacity: 1 !important;
+  transform: none !important;
 }
 .form-head {
   padding: 40px 44px;
