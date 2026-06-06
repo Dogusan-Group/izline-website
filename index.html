@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>izLine | Denizcilik Teknolojileri — Ön Çalışma</title>
+  <title>izLine | Denizcilik Teknolojileri — Çalışma</title>
   <meta name="description" content="izLine, tekne, yat, marina, filo, servis ve sigorta ekosistemi için akıllı denizcilik teknolojileri geliştiren bir teknoloji girişimidir."/>
   <link rel="stylesheet" href="style.css"/>
   <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
@@ -43,14 +43,23 @@
   <div class="blob blob1"></div>
   <div class="blob blob2"></div>
   <div class="wrap">
+    <a href="#">
+      <img
+        src="./img/logo.png"
+        alt="izLine Logo"
+        class="hero-logo"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+      />
+      <!-- Logo yüklenemezse metin logosu göster -->
+      <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:.08em; color:#fff;">
+        iz<span style="color:#94C500;">Line</span>
+        <span style="display:block; font-size:10px; letter-spacing:.22em; color:rgba(255,255,255,.45); font-family:'Josefin Sans',sans-serif; text-transform:uppercase;">Marine</span>
+      </span>
+    </a>
     <div class="herogrid">
 
       <!-- Sol: Metin -->
       <div>
-        <div class="pill reveal">
-          <span class="dot"></span>
-          Erken Aşama · Ön Çalışma
-        </div>
         <h1 class="heading reveal delay-1">
           Denizciliği <em>gerçek veriyle</em> dönüştürüyoruz.
         </h1>
@@ -59,7 +68,7 @@
         </p>
         <div class="heroctarow reveal delay-3">
           <a href="#signup" class="btn-primary">
-            Ön Çalışmaya Katıl
+            Çalışmaya Katıl
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -258,7 +267,7 @@
     <div class="form-shell reveal">
 
       <div class="form-head">
-        <h2>izLine Ön Çalışmasına Katılın</h2>
+        <h2>izLine Çalışmasına Katılın</h2>
         <p>Geliştireceğimiz ürün ve hizmetlerin gerçek ihtiyaçlara göre şekillenmesi için hazırlandı. Katkı sunan kişi ve kurumlara pilot süreçte öncelik ve özel avantajlar sunacağız.</p>
       </div>
 
@@ -465,7 +474,7 @@
 <!-- ▸▸ FOOTER ◂◂ -->
 <footer>
   <div class="foot">
-    <div>
+    <div class="foot-content">
       <div class="foot-brand">
         <img
           src="./img/logo.png"
@@ -478,19 +487,21 @@
           iz<span style="color:#94C500;">Line</span>
           <span style="display:block; font-size:10px; letter-spacing:.22em; color:rgba(255,255,255,.45); font-family:'Josefin Sans',sans-serif; text-transform:uppercase;">Marine</span>
         </span>
-        </div>
-        <p>Denizcilik Teknolojileri · Erken Aşama Girişim · 2024–2025</p>
-        <button type="button" class="foot-email" onclick="window.location.href='mailto:info@izline.com'">
-          info@izline.com
-        </button>
-    </div>
+      </div>
       <nav class="foot-links">
-      <a href="#solution">Çözüm</a>
-      <a href="#roadmap">Yol Haritası</a>
-      <a href="#ecosystem">Ekosistem</a>
-      <a href="#signup">Ön Çalışma</a>
-      <a href="#contact">İletişim</a>
-    </nav>
+        <a href="#solution">Çözüm</a>
+        <a href="#roadmap">Yol Haritası</a>
+        <a href="#ecosystem">Ekosistem</a>
+        <a href="#signup">Çalışma</a>
+        <a href="#contact">İletişim</a>
+      </nav>
+    </div>
+    <div class="foot-info">
+      <p>Denizcilik Teknolojileri · Erken Aşama Girişim · 2024–2025</p>
+      <button type="button" class="foot-email" onclick="window.location.href='mailto:info@izline.com'">
+        info@izline.com
+      </button>
+    </div>
   </div>
 </footer>
 
