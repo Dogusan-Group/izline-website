@@ -3,6 +3,45 @@
    =================================================== */
 
 /* ─────────────────────────────────────────────────
+   HAMBURGER MENU
+   ───────────────────────────────────────────────── */
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuOverlay = document.getElementById('menuOverlay');
+
+// Toggle menu when hamburger is clicked
+hamburgerBtn?.addEventListener('click', () => {
+  hamburgerBtn.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  menuOverlay.classList.toggle('active');
+});
+
+// Close menu when a link is clicked
+mobileMenu?.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburgerBtn.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    menuOverlay.classList.remove('active');
+  });
+});
+
+// Close menu when clicking overlay
+menuOverlay?.addEventListener('click', () => {
+  hamburgerBtn?.classList.remove('active');
+  mobileMenu?.classList.remove('active');
+  menuOverlay?.classList.remove('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!hamburgerBtn?.contains(e.target) && !mobileMenu?.contains(e.target)) {
+    hamburgerBtn?.classList.remove('active');
+    mobileMenu?.classList.remove('active');
+    menuOverlay?.classList.remove('active');
+  }
+});
+
+/* ─────────────────────────────────────────────────
    SCROLL REVEAL
    ───────────────────────────────────────────────── */
 const revealEls = document.querySelectorAll('.reveal');

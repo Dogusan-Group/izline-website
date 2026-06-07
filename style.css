@@ -154,6 +154,172 @@ nav.topnav {
   background: var(--brand-green-dark);
 }
 
+/* ───────────── HAMBURGER MENU ───────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2.5px;
+  background: var(--brand-green);
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+  display: block;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: var(--brand-navy-dark);
+  border-bottom: 1px solid rgba(148,197,0,.18);
+  padding: 16px 24px;
+  gap: 12px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  z-index: 99;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu a {
+  padding: 12px 0;
+  color: rgba(255,255,255,.75);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(148,197,0,.1);
+  transition: color 0.2s ease;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.mobile-menu.active a {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu.active a:nth-child(1) { transition-delay: 0.1s; }
+.mobile-menu.active a:nth-child(2) { transition-delay: 0.15s; }
+.mobile-menu.active a:nth-child(3) { transition-delay: 0.2s; }
+.mobile-menu.active a:nth-child(4) { transition-delay: 0.25s; }
+.mobile-menu.active a:nth-child(5) { transition-delay: 0.3s; }
+
+.mobile-menu a:hover {
+  color: var(--brand-green);
+}
+
+.mobile-menu .mobile-btn {
+  display: inline-block;
+  background: var(--brand-green);
+  color: var(--brand-navy);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-top: 8px;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(148,197,0,.30);
+  border-bottom: none;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu.active .mobile-btn {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.35s;
+}
+
+.mobile-menu .mobile-btn:hover {
+  background: var(--brand-green-dark);
+  color: var(--brand-navy);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(148,197,0,.40);
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(31, 35, 72, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 98;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Responsive: Hide desktop nav, show hamburger on mobile */
+@media (max-width: 768px) {
+  .navlinks {
+    display: none;
+  }
+
+  .navbtn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navinner {
+    height: 80px;
+  }
+}
+
 /* ───────────── HERO ───────────── */
 .hero {
   min-height: 100svh;
@@ -882,11 +1048,11 @@ footer {
 
 @media (max-width: 680px) {
   .hero-logo { display: block; }
-  .topnav { display: none;}
-  .foot-logo { height: 70px; }
+  /* .topnav { display: none; } */
+  .navlinks { display: none; }
   .foot-content { flex-direction: column; gap: 25px; padding: 0 !important; }
 
-  .hero   { padding: 10px 0 56px; min-height: auto; }
+  .hero   { padding: 120px 0 56px; min-height: auto; }
   h1.heading { font-size: 30px; }
   .herolead  { font-size: 15px; }
   .heroctarow { flex-direction: column; align-items: stretch; }

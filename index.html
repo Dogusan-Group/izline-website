@@ -32,30 +32,37 @@
       <a href="#roadmap">Yol Haritası</a>
       <a href="#ecosystem">Ekosistem</a>
       <a href="#signup">Katıl</a>
+        <a href="#contact">İletişim</a>
     </nav>
 
     <a href="#signup" class="navbtn">Formu Doldur →</a>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menüyü aç/kapat">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
+
+  <!-- Mobile Menu -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#solution">Çözüm</a>
+    <a href="#roadmap">Yol Haritası</a>
+    <a href="#ecosystem">Ekosistem</a>
+    <a href="#signup">Katıl</a>
+    <a href="#signup" class="mobile-btn">Formu Doldur →</a>
+  </nav>
 </nav>
+
+<!-- Menu Overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
 
 <!-- ▸▸ HERO ◂◂ -->
 <header class="hero">
   <div class="blob blob1"></div>
   <div class="blob blob2"></div>
   <div class="wrap">
-    <a href="#">
-      <img
-        src="./img/logo.png"
-        alt="izLine Logo"
-        class="hero-logo"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-      />
-      <!-- Logo yüklenemezse metin logosu göster -->
-      <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:.08em; color:#fff;">
-        iz<span style="color:#94C500;">Line</span>
-        <span style="display:block; font-size:10px; letter-spacing:.22em; color:rgba(255,255,255,.45); font-family:'Josefin Sans',sans-serif; text-transform:uppercase;">Marine</span>
-      </span>
-    </a>
     <div class="herogrid">
 
       <!-- Sol: Metin -->
@@ -497,7 +504,7 @@
       </nav>
     </div>
     <div class="foot-info">
-      <p>Denizcilik Teknolojileri · Erken Aşama Girişim · 2024–2025</p>
+      <p>Denizcilik Teknolojileri · 2024–2025</p>
       <button type="button" class="foot-email" onclick="window.location.href='mailto:info@izline.com'">
         info@izline.com
       </button>
