@@ -375,18 +375,9 @@ const submitBtn = form.querySelector('button[type="submit"]');
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  // hCaptcha token'ı al
-  const captchaToken = document.querySelector('[name="h-captcha-response"]')?.value ||
-                       window.hcaptcha?.getResponse?.()?.response;
-
-  if (!captchaToken) {
-    alert("Lütfen CAPTCHA doğrulamasını tamamlayın.");
-    return;
-  }
-
+  // hCaptcha doğrulaması Web3Forms client script tarafından otomatik halleniyor
   const formData = new FormData(form);
   formData.append("access_key", "f49b671e-4229-4996-a719-9ecc9ec0fe02");
-  formData.append("h-captcha-response", captchaToken);
 
   const originalText = submitBtn.textContent;
 
@@ -409,7 +400,8 @@ form.addEventListener('submit', async (e) => {
             document.getElementById('progLabel').textContent = 'Tamamlandı ✓';
             form.reset();
         } else {
-            alert("Bir şeyler yanlış gitti. Lütfen tekrar deneyin: " + data.message);
+            console.error('Form submit error:', data);
+            alert("Bir şeyler yanlış gitti. Lütfen tekrar deneyin: " + (data.message || data.error || 'Bilinmeyen hata'));
         }
 
     } catch (error) {
