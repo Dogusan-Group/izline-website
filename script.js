@@ -159,14 +159,14 @@ const templates = {
         <label class="field"><span>Aylık ne kadar ödemeyi düşünürsünüz?</span>
           <select name="tekne_butce_aylik">
             <option>Henüz bilmiyorum</option>
-            <option>200 TL'ye kadar</option>
-            <option>200–500 TL</option>
+            <option>500 TL'ye kadar</option>
             <option>500–1.000 TL</option>
-            <option>1.000–2.000 TL</option>
-            <option>2.000 TL+</option>
+            <option>1.000–3.000 TL</option>
+            <option>3.000–5.000 TL</option>
+            <option>5.000 TL+</option>
           </select>
         </label>
-        ${select('beta_ilgi','Beta testi için gönüllü olur musunuz?',['Evet, hemen','Evet, ürün hazır olunca','Belki, detay görmek isterim','Hayır'])}
+        ${select('beta_ilgi','Beta testi için gönüllü olur musunuz?',['Evet, ürün hazır olunca','Belki, detay görmek isterim','Hayır'])}
       </div>
       <label class="field"><span>En büyük endişeniz veya beklentiniz nedir?</span>
         <textarea name="tekne_yorum" placeholder="Özgürce yazın — her şey değerli."></textarea>
