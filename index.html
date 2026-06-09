@@ -288,7 +288,7 @@
   </div>
 </section>
 
-<!-- ▸▸ ÖN ÇALIŞMA FORMU ◂◂ -->
+<!-- ▸▸ ÇALIŞMA FORMU ◂◂ -->
 <section class="light" id="signup">
   <div class="wrap">
     <div class="form-shell">
@@ -327,18 +327,66 @@
             <input required name="ad_soyad" placeholder="Örn. Mehmet Yılmaz"/>
           </label>
           <label class="field">
-            <span>Telefon / E-posta *</span>
-            <input required name="iletisim" placeholder="Telefon veya e-posta"/>
+            <span>Telefon *</span>
+            <div class="phone-field">
+              <select name="ulke_kodu" required>
+                <option value="+90" selected>🇹🇷 +90</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+1">🇨🇦 +1</option>
+                <option value="+7">🇷🇺 +7</option>
+                <option value="+31">🇳🇱 +31</option>
+                <option value="+32">🇧🇪 +32</option>
+                <option value="+33">🇫🇷 +33</option>
+                <option value="+34">🇪🇸 +34</option>
+                <option value="+36">🇭🇺 +36</option>
+                <option value="+39">🇮🇹 +39</option>
+                <option value="+40">🇷🇴 +40</option>
+                <option value="+41">🇨🇭 +41</option>
+                <option value="+43">🇦🇹 +43</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+45">🇩🇰 +45</option>
+                <option value="+46">🇸🇪 +46</option>
+                <option value="+47">🇳🇴 +47</option>
+                <option value="+48">🇵🇱 +48</option>
+                <option value="+49">🇩🇪 +49</option>
+                <option value="+351">🇵🇹 +351</option>
+                <option value="+352">🇱🇺 +352</option>
+                <option value="+356">🇲🇹 +356</option>
+                <option value="+357">🇨🇾 +357</option>
+                <option value="+358">🇫🇮 +358</option>
+                <option value="+359">🇧🇬 +359</option>
+                <option value="+370">🇱🇹 +370</option>
+                <option value="+371">🇱🇻 +371</option>
+                <option value="+381">🇷🇸 +381</option>
+                <option value="+386">🇸🇮 +386</option>
+                <option value="+420">🇨🇿 +420</option>
+                <option value="+421">🇸🇰 +421</option>
+              </select>
+              <div class="input-container">
+                <input 
+                  type="tel" 
+                  id="phoneInput" 
+                  name="telefon" 
+                  required 
+                  placeholder="5XX XXX XX XX" 
+                  maxlength="13"
+                />
+              </div>
+            </div>
           </label>
           <label class="field">
-            <span>Kurum / Marina / Firma Adı</span>
-            <input name="kurum" placeholder="Varsa kurum adınız"/>
+            <span>E-posta *</span>
+            <input required type="email" name="eposta" placeholder="Örn. ad@kurum.com"/>
           </label>
           <label class="field">
             <span>Şehir / Bölge</span>
             <input name="sehir" placeholder="Örn. İzmir, Bodrum, Antalya"/>
           </label>
         </div>
+        <label class="field lastfield">
+          <span>Kurum / Marina / Firma Adı</span>
+          <input name="kurum" placeholder="Varsa kurum adınız"/>
+        </label>
 
         <!-- ADIM 2: MÜŞTERİ GRUBU -->
         <div class="step-label">

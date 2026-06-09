@@ -923,6 +923,8 @@ textarea[name="g-recaptcha-response"] {
 }
 .matrix-opt:hover { border-color: rgba(148,197,0,.45); background: rgba(148,197,0,.06); }
 
+.lastfield { margin: 15px 0; }
+
 /* Submit */
 .submit-row {
   display: flex; gap: 14px; flex-wrap: wrap; align-items: center;
@@ -952,6 +954,26 @@ textarea[name="g-recaptcha-response"] {
   color: var(--brand-navy); font-weight: 700; font-size: 15px;
 }
 .success span { display: block; font-size: 14px; font-weight: 400; color: var(--slate); margin-top: 4px; }
+
+
+/* ───────────── TELEFON ALANI ───────────── */
+.phone-field {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.phone-field select {
+  flex: 0 0 110px; /* Ülke kodu genişliği sabit */
+  min-width: 110px;
+  background-position: right 10px center; /* Ok işaretini biraz sola çekiyoruz */
+  padding-right: 28px;
+}
+
+.phone-field .input-container {
+  flex: 1; /* Input kalan tüm alanı kaplar */
+}
 
 /* ───────────── İLETİŞİM BANDI ───────────── */
 .contact-band {
@@ -1051,6 +1073,7 @@ footer {
   /* .topnav { display: none; } */
   .navlinks { display: none; }
   .foot-content { flex-direction: column; gap: 25px; padding: 0 !important; }
+  .phone-field { display: flex !important; flex-direction: row !important; }
 
   .hero   { padding: 120px 0 56px; min-height: auto; }
   h1.heading { font-size: 30px; }

@@ -121,6 +121,87 @@ function select(name, label, opts) {
 }
 
 /* ─────────────────────────────────────────────────
+   SADECE HARFLERE İZİN VER
+   ───────────────────────────────────────────────── */
+function allowOnlyLetters(inputName) {
+  const input = document.querySelector(`input[name="${inputName}"]`);
+  if (!input) return;
+
+  input.addEventListener('keydown', function (e) {
+    const allowedKeys = ['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'Delete', 'Enter', ' ', '-'];
+    // Türkçe ve İngilizce harfleri kabul et
+    const isLetter = /^[a-zA-ZçğıöşüÇĞİÖŞÜ]$/.test(e.key);
+    
+    if (!allowedKeys.includes(e.key) && !isLetter) {
+      e.preventDefault();
+    }
+  });
+
+  // Yapıştırma (paste) kontrol
+  input.addEventListener('paste', function (e) {
+    e.preventDefault();
+    const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+    // Sadece harfleri, boşlukları ve tireyi tut
+    const cleanText = pastedText.replace(/[^a-zA-ZçğıöşüÇĞİÖŞÜ\s-]/g, '');
+    input.value = cleanText;
+  });
+}
+
+/* ─────────────────────────────────────────────────
+   SADECE NUMALARA İZİN VER
+   ───────────────────────────────────────────────── */
+function allowOnlyNumbers(inputName) {
+  const input = document.querySelector(`input[name="${inputName}"]`);
+  if (!input) return;
+
+  input.addEventListener('keydown', function (e) {
+    const allowedKeys = ['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'Delete', 'Enter'];
+    if (!allowedKeys.includes(e.key) && isNaN(Number(e.key))) {
+      e.preventDefault();
+    }
+  });
+
+  // Yapıştırma (paste) kontrol
+  input.addEventListener('paste', function (e) {
+    e.preventDefault();
+    const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+    // Sadece sayıları tut
+    const cleanText = pastedText.replace(/\D/g, '');
+    input.value = cleanText;
+  });
+}
+
+// Form yüklendiğinde input'larına fonksiyonları uygula
+document.addEventListener('DOMContentLoaded', function () {
+  // Sadece harfler (statik input'lar)
+  allowOnlyLetters('ad_soyad');
+  allowOnlyLetters('kurum');
+  allowOnlyLetters('sehir');
+  
+  // Sadece sayılar (statik input'lar)
+  // Telefon zaten ayrı event listener'ı var
+  
+  // İlk kez tekne template'ını göster ve dinamik input'lara fonksiyon uygula
+  renderDyn('tekne');
+});
+
+document.getElementById('phoneInput').addEventListener('input', function (e) {
+  // Sadece sayıları al
+  let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+  
+  // Formatı oluştur: 5XX XXX XX XX
+  e.target.value = !x[2] ? x[1] : x[1] + ' ' + x[2] + (x[3] ? ' ' + x[3] : '') + (x[4] ? ' ' + x[4] : '');
+});
+
+// Kullanıcı harf girmeye çalışırsa engelle (Sadece sayı ve kontrol tuşları)
+document.getElementById('phoneInput').addEventListener('keydown', function (e) {
+  const allowedKeys = ['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'Delete', 'Enter'];
+  if (!allowedKeys.includes(e.key) && isNaN(Number(e.key))) {
+    e.preventDefault();
+  }
+});
+
+/* ─────────────────────────────────────────────────
    DİNAMİK FORM ŞABLONLARı
    ───────────────────────────────────────────────── */
 const templates = {
@@ -272,7 +353,7 @@ const templates = {
         ${select('servis_calisma','Nasıl çalışıyorsunuz?',['Sabit atölyeden','Mobil servis (denize gidiyoruz)','Her ikisi de'])}
         ${select('servis_talep_kanal','Servis talepleri nasıl geliyor?',['Telefon','WhatsApp','Referans','Web / dijital','Karma'])}
         ${select('servis_kayit','Müşteri ve bakım geçmişi kaydı',['Kayıt tutmuyoruz','Manuel / kağıt','Excel','Yazılım kullanıyoruz'])}
-        <label class="field"><span>En sık aldığınız servis tipleri</span><input name="servis_sik" placeholder="Örn. motor, akü, elektrik"/></label>
+        <label class="field"><span>En sık aldığınız servis tipleri</span><input name="servis_sik" placeholder="Örn. motor - akü - elektrik"/></label>
         ${select('servis_acil','Acil çağrıları nasıl yönetiyorsunuz?',['Telefon','WhatsApp','Düzenli sistem yok','Servis yazılımıyla'])}
       </div>
     </div>
@@ -363,8 +444,38 @@ function renderDyn(seg) {
   };
   document.getElementById('dynTitle').textContent     = titles[seg] || 'Size Özel Sorular';
   document.getElementById('dynQuestions').innerHTML   = templates[seg] || templates.diger;
+  
+  // Template eklendikten sonra dinamik input'lara fonksiyonları uygula
+  applyDynamicInputValidation(seg);
 }
-renderDyn('tekne');
+
+/* ─────────────────────────────────────────────────
+   DİNAMİK INPUT'LARA DOĞRULAMA UYGULA
+   ───────────────────────────────────────────────── */
+function applyDynamicInputValidation(seg) {
+  // Segment'e göre dinamik input'ları tanımla
+  const dynamicInputs = {
+    tekne: [],
+    marina: ['marina_calisan'],
+    filo: [],
+    servis: ['servis_yillik', 'servis_sik'],
+    sigorta: ['sig_police_adet'],
+    diger: ['diger_rol']
+  };
+
+  const inputsForSegment = dynamicInputs[seg] || [];
+
+  // Her input için doğru fonksiyonu uygula
+  inputsForSegment.forEach(inputName => {
+    // marina_calisan, servis_yillik, sig_police_adet -> sayı
+    // servis_sik, diger_rol -> harf
+    if (['marina_calisan', 'servis_yillik', 'sig_police_adet'].includes(inputName)) {
+      allowOnlyNumbers(inputName);
+    } else if (['servis_sik', 'diger_rol'].includes(inputName)) {
+      allowOnlyLetters(inputName);
+    }
+  });
+}
 
 /* ─────────────────────────────────────────────────
    FORM SUBMIT
