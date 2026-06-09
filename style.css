@@ -864,30 +864,6 @@ select {
   appearance: checkbox;
 }
 
-/* hCaptcha Safari support */
-.h-captcha {
-  display: block;
-  margin: 20px 0;
-  background: #f9f9f9;
-  border-radius: 8px;
-  padding: 12px;
-}
-
-/* hCaptcha response textarea hide */
-textarea[name="h-captcha-response"] {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  width: 0 !important;
-}
-
-textarea[name="g-recaptcha-response"] {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  width: 0 !important;
-}
-
 /* Matrix */
 .matrix { display: grid; gap: 8px; margin-top: 8px; }
 .matrix-row { display: grid; gap: 8px; align-items: stretch; }

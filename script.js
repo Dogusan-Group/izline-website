@@ -486,7 +486,6 @@ const submitBtn = form.querySelector('button[type="submit"]');
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  // hCaptcha doğrulaması Web3Forms client script tarafından otomatik halleniyor
   const formData = new FormData(form);
   formData.append("access_key", "f49b671e-4229-4996-a719-9ecc9ec0fe02");
 

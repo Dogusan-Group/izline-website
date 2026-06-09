@@ -24,8 +24,6 @@
   <meta name="twitter:image" content="./img/logo_full.png"/>
   
   <link rel="stylesheet" href="style.css"/>
-  <!-- Web3Forms Client Script (handles hCaptcha automatically) -->
-  <script src="https://web3forms.com/client/script.js" async defer></script>
 </head>
 <body>
 
@@ -379,8 +377,8 @@
             <input required type="email" name="eposta" placeholder="Örn. ad@kurum.com"/>
           </label>
           <label class="field">
-            <span>Şehir / Bölge</span>
-            <input name="sehir" placeholder="Örn. İzmir, Bodrum, Antalya"/>
+            <span>Şehir / Bölge *</span>
+            <input required name="sehir" placeholder="Örn. İzmir, Bodrum, Antalya"/>
           </label>
         </div>
         <label class="field lastfield">
@@ -498,11 +496,6 @@
             <span>Son olarak — izLine'nin çözmesini en çok istediğiniz şey nedir?</span>
             <textarea name="son_yorum" placeholder="Kısa veya uzun, özgürce yazabilirsiniz. Bu yorum en değerli geri bildirimlerimizden biri olacak."></textarea>
           </label>
-        </div>
-
-        <!-- CAPTCHA GÜVENLİĞİ -->
-        <div class="qgroup" style="margin-bottom:24px">
-          <div class="h-captcha" data-captcha="true"></div>
         </div>
 
         <!-- Gönder / İndir -->
